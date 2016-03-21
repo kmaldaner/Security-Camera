@@ -1,4 +1,10 @@
+#!/usr/bin/env python
+
+
 def take_photo():
+	
+	"""take_photo: Turns on IR flash and take the photo. Saving the photo under the date and time"""
+
 	import picamera
 	import datetime
 	import RPi.GPIO as GPIO

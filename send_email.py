@@ -6,7 +6,7 @@ def send_email(name):
 	from email.MIMEImage import MIMEImage
 
 	strFrom = 'kylacamera@gmail.com'
-	strTo = 'kmaldaner@gmail.com'
+	strTo = 'kylacamera@gmail.com'
 
 	msgRoot = MIMEMultipart('related')
 	msgRoot['Subject'] = 'Someone entered your home at ' + name[:-4]
@@ -30,7 +30,7 @@ def send_email(name):
 	msgImage.add_header('Content-ID', '<image1>')
 	msgRoot.attach(msgImage)
 
-	password  = getpass.getpass()
+	password  =open("../auth.txt",'r').read() 
 
 	import smtplib
 	smtp = smtplib.SMTP()

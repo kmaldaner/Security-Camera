@@ -13,7 +13,7 @@ def send_email(name):
 
 	# Create the root message and fill in the from, to, and subject headers
 	msgRoot = MIMEMultipart('related')
-	msgRoot['Subject'] = 'test message'
+	msgRoot['Subject'] = 'Someone entered your home at ' + name[:-4]
 	msgRoot['From'] = strFrom
 	msgRoot['To'] = strTo
 	msgRoot.preamble = 'This is a multi-part message in MIME format.'
@@ -27,7 +27,7 @@ def send_email(name):
 	msgAlternative.attach(msgText)
 
 	# We reference the image in the IMG SRC attribute by the ID we give it below
-	msgText = MIMEText('<b>Some <i>HTML</i> text</b> and an image.<br><img src="cid:image1"><br>Nifty!', 'html')
+	msgText = MIMEText("I've attached a photo of whoever entered", 'html')
 	msgAlternative.attach(msgText)
 
 	# This example assumes the image is in the current directory
